@@ -18,7 +18,7 @@
     height: 6rem;
     margin: 0 1rem 1rem 1rem;
 }
-#SCS, #UNISC {
+#SCS, #UNISC, #HANZA {
     width: 100%;
     height: 100%;
     background-size: contain;
@@ -27,9 +27,9 @@
 #SCC{
     background-image: url("https://www.sunshinecoast.qld.gov.au/img/sunshine-coast-council/logos/logo__scc-horizontal--on-light.svg");
     background-position: 5% 50%;
+    background-size: cover;
     width: 100%;
     height: 100%;
-    background-size: cover;
 }
 #UNISC {
     background-image: url("https://www.usc.edu.au/media/orijtzlk/footer-logo.svg");
@@ -38,6 +38,10 @@
 #SCS {
     background-color: #442F38;
     background-image: url("https://suncare.org.au/hubfs/logo-light.svg");
+    background-position: 0 50%;
+}
+#HANZA {
+    background-image: url("https://irp.cdn-website.com/553149f4/dms3rep/multi/Hanza-outline.svg");
     background-position: 50% 50%;
 }
 @media (min-width: 768px) { 
@@ -48,6 +52,11 @@
     }
     #UNISC {
         background-position: 50% 0;
+    }
+    #HANZA {
+        background-size: cover;
+        background-position: 50% 0;
+        padding: 1rem 0 1rem 1.8rem;
     }
 }
 
@@ -67,5 +76,10 @@
     }
     #UNISC {
         background-position: 50% 90%;
+    }
+    #HANZA {
+        background-size: cover;
+        padding: 2rem 0 2rem 3.4rem;
+        background-position: 50% 0;
     }
 }

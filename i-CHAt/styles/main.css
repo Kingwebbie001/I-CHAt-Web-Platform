@@ -1,0 +1,471 @@
+/* Base styles for all devices (mobile first) */
+
+:root {
+    /* 🎨 Colors */
+    --color-primary: #FFB000;
+    --color-secondary: #FFC976;
+    --color-dark: #333333;
+    --color-darker: #111111;
+    --color-text-light: white;
+    --color-text-dark: #333;
+    --color-background-light: white;
+    --color-background-dark: #f8f8f8;
+    --color-border-dark: #555555;
+
+    /* 📏 Spacing */
+    --container-spacing-mobile: 2rem 0 0 0;
+    --container-spacing-tablet: 3rem 0 0 0;
+    --container-spacing-desktop: 6rem 0 0 0;
+    --margin-main-desktop: 5rem 20rem 0 20rem;
+    --margin-main-tablet: 3rem 6rem 0 6rem;
+    --margin-main-mobile: 2rem 0 0 0;
+    --margin-footer-mobile: 0 0 0 0;
+    --margin-footer-tablet: 0 6rem 0 6rem;
+    --margin-footer-desktop: 0 20rem 0 20rem;
+
+    /* 📦 Padding */
+    --padding-container-mobile: 1rem;
+    --padding-container-tablet: 2rem;
+    --padding-container-desktop: 3rem;
+    
+    /* 📐 Borders & Shadows */
+    --border-radius-nav: 1rem;
+    --border-radius-container: 1rem 1rem 1rem 1rem;
+    --border-radius-container-bottom: 0 0 1rem 1rem;
+    --border-radius-container-top: 1rem 1rem 0 0;
+    --border-radius-circle: 100%;
+    --shadow-base: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-bottom: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    --shadow-top: 0px -4px 6px rgba(0, 0, 0, 0.3);
+
+    /* ✍️ Fonts */
+    --font-family-body: 'Roboto', sans-serif;
+    --font-family-nav: "Noto Sans", sans-serif;
+    --font-weight-light: 250;
+    --font-weight-bold: bold;
+    --font-weight-nav: 500;
+    --font-weight-principles: 600;
+
+    /* ✍️ Font Sizes */
+    --font-size-body-mobile: 14px;
+    --font-size-body-tablet: 18px;
+    --font-size-body-desktop: 20px;
+    --font-size-nav-mobile: 0.8rem;
+    --font-size-nav-tablet: 1rem;
+    --font-size-nav-desktop: 1.8rem;
+
+    /* 🖼️ Logo */
+    --logo-width-mobile: 8rem;
+    --logo-width-tablet: 10rem;
+    --logo-width-desktop: 12rem;
+}
+
+body::before {
+    content: '';
+    position: fixed; /* This is key to keeping it behind everything */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../src/images/splashImage.jpg");
+    background-size: cover;
+    background-position: 40% 20%;
+    z-index: -1; /* Place it behind all other content */
+    opacity: 0.5;
+    filter: blur(2px);
+}
+
+body {
+    margin: 0;
+    font-size: var(--font-size-body-mobile);
+    padding-top: 5rem;
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-light);
+    background-color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    box-shadow: var(--shadow-base);
+    z-index: 1000;
+    background-color: var(--color-background-light);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: var(--margin-main-mobile);
+}
+
+main h1, main h2 {
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color-background-light);
+    box-shadow: var(--shadow-top);
+    margin: var(--container-spacing-mobile);
+}
+
+.footerContainer {
+    display: flex;
+}
+.footerColumnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: var(--margin-footer-mobile);
+}
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+    flex-grow: 1;
+    flex-basis: 33.33%; 
+    flex-wrap: wrap;
+}
+#AOCBanner {
+    width: 100%;
+    height: 5vh;
+    background-image: url("src/images/bodyBackground.jpg");
+    background-size: cover;
+    margin: var(--margin-main-mobile);
+}
+.navElement {
+    font-family: var(--font-family-nav);
+    font-weight: var(--font-weight-nav);
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 150;
+    list-style-type: none;
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius-nav);
+    padding: 0.8rem 1rem;
+    box-shadow: var(--shadow-bottom);
+    color: var(--color-text-light);
+}
+
+.navElement a {
+    text-decoration: none;
+    color: var(--color-text-light);
+}
+
+.navElement:hover {
+    background-color: var(--color-darker);
+    cursor: pointer;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin: 0 0 0 2rem;
+}
+
+.hamburger-menu {
+    display: block;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-dark);
+    padding: 0 2rem 0 0;
+    order: 0;
+}
+
+#I-CHAt-Logo {
+    width: var(--logo-width-mobile);
+    height: auto;
+    order: 1;
+}
+
+.directoryContainer {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-background-dark);
+    box-shadow: var(--shadow-bottom);
+    z-index: 999;
+    padding: 1rem 0;
+}
+
+.directoryContainer.show {
+    margin: 1rem 0 0 0;
+    display: flex;
+}
+
+.directoryContainer ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.directoryContainer li {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    font-size: var(--font-size-nav-mobile);
+    border-bottom: 1px solid var(--color-border-dark);
+}
+
+.directoryContainer li:last-child {
+    border-bottom: none;
+}
+
+.directoryContainer li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 1rem;
+}
+.bodyContainer {
+    display: flex;
+    flex-direction: column;
+    margin: var(--container-spacing-mobile);
+    padding: var(--padding-container-mobile);
+    background-color: var(--color-background-light);
+    box-shadow: var(--shadow-base);
+    border-radius: var(--border-radius-container);
+}
+#feedbackFormContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#feedbackFormContainer.hidden {
+  display: none;
+}
+
+#feedbackForm {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+#feedbackForm h3 {
+  margin-top: 0;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+#feedbackForm label,
+#feedbackForm input,
+#feedbackForm textarea,
+#feedbackForm button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#feedbackForm input,
+#feedbackForm textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#feedbackForm button {
+  font-size: 1rem;
+}
+
+/* --- Media Queries --- */
+
+/* Styles for screens 768px and up (tablets, etc.) */
+@media (min-width: 768px) {
+    body {
+        font-size: var(--font-size-body-tablet);
+    }
+
+    header {
+        padding: 0.5rem 2%;
+        justify-content: space-between;
+    }
+
+    main {
+        margin: var(--margin-main-tablet);
+    }
+    footer {
+        margin: var(--container-spacing-tablet);
+    }
+    .footerContainer {
+        margin: var(--margin-footer-tablet);
+    }
+    #AOC {
+        margin: var(--margin-main-tablet);
+    }
+
+    .logoContainer {
+        flex-grow: 1;
+        margin: 0;
+    }
+
+    #I-CHAt-Logo {
+        width: var(--logo-width-tablet);
+        height: auto;
+        order: 1;
+    }
+    .hamburger-menu {
+        display: none;
+    }
+
+    .directoryContainer {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        top: auto;
+        left: auto;
+        width: auto;
+        background-color: transparent;
+        box-shadow: none;
+        z-index: auto;
+        padding: 0;
+        align-items: center;
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+
+    .directoryContainer ul {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        font-size: var(--font-size-nav-tablet);
+        list-style-type: none;
+        margin: 0 2rem 0 0;
+        padding: 0;
+    }
+
+    .directoryContainer li {
+        width: auto;
+        margin: 0 0.8rem 0 0;
+        border-bottom: none;
+        border-radius: var(--border-radius-nav);
+        background-color: var(--color-dark);
+    }
+
+    .directoryContainer li a {
+        display: block;
+        justify-content: flex-start;
+    }
+
+
+    .bodyContainer {
+        margin: var(--container-spacing-tablet);
+        padding: var(--padding-container-tablet);
+    }
+}
+
+/* Styles for screens 1024px and up (desktops) */
+@media (min-width: 1024px) {
+    body {
+        font-size: var(--font-size-body-desktop);
+    }
+
+    main {
+        margin: var(--margin-main-desktop);
+    }
+
+    header {
+        justify-content: space-between;
+    }
+    footer {
+        margin: var(--container-spacing-desktop);
+    }
+    .footerContainer {
+        margin: var(--margin-footer-desktop);
+    }
+    .footerColumnContainer {
+        flex-wrap: nowrap;
+    }
+    #AOC {
+        margin: var(--margin-main-desktop);
+    }
+    .logoContainer {
+        flex-grow: 0;
+        margin: 0;
+    }
+
+    #I-CHAt-Logo {
+        width: var(--logo-width-desktop);
+        height: auto;
+    }
+    .directoryContainer {
+        justify-content: flex-end;
+    }
+
+    .directoryContainer ul {
+        margin: 0 4rem 0 0;
+    }
+
+    .directoryContainer li {
+        margin: 0 1rem 0 1rem;
+        font-size: var(--font-size-nav-desktop);
+    }
+
+    .principlesHeading {
+        font-size: 2rem;
+    }
+
+    .principlesSVG {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .bodyContainer {
+        margin: var(--container-spacing-desktop);
+        padding: var(--padding-container-desktop);
+    }
+
+    .videoContainer {
+        margin: var(--container-spacing-desktop);
+        padding: 3rem;
+    }
+
+    .bodyNavContainer li {
+        font-size: var(--font-size-nav-desktop);
+    }
+
+}

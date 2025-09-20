@@ -6,10 +6,11 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="./styles/main.css">
+        <link rel="stylesheet" href="./styles/index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -19,60 +20,106 @@
             <button class="hamburger-menu" id="hamburger-menu">☰</button>
             <div class="directoryContainer" id="directory-container">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="">Testimonials</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Forms</a></li>
+                    <li class="navElement"><a href="index.html">Home</a></li>
+                    <li class="navElement"><a href="affiliates.html">Affiliates</a></li>
+                    <li class="navElement"><a href="about.html">About</a></li>
+                    <li class="navElement"><a href="forms.html">Forms</a></li>
                 </ul>
             </div>
         </header>
-        <div class="splashImage">
-        </div>
         <main>
             <div class="bodyContainer">
                 <h1>Welcome to I-CHAt:</h1>
-                <h2>I-CHAt (Intergenerational Community Homeshare Activity)</h2>
+                <h2 id="acronymHeader">Intergenerational Community Homeshare Activity (I-CHAt)</h2>
                 <h3>What is I-CHAt?</h3>
                 <p>I-CHAt is an evidence-based homeshare program for older adult homeowners and students on the Sunshine Coast.</p>
-                <h3>Why Homeshare?</h3>
+                <h3>What Does Homeshare Look-like?</h3>
+                <iframe src="https://www.youtube.com/embed/1vVg6okzFRg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+                <div class="bodyNavContainer">
+                    <ul>
+                        <div class="bodyNavColumn">
+                            <li class="navElement"><a href="">Learn More</a></li>
+                        </div>
+                        <div class="bodyNavColumn">
+                            <li class="navElement"><a href="">Testimonials</a></li>
+                        </div>
+                    </ul>
+                </div>
+            <div class="bodyContainerNoBottomRadius">
+                <h3>What is Homeshare?</h3>
                 <p>Homeshare is a mutually beneficial shared living arrangement
                     that reduces social isolation of older people (homeowners) and
                     allows access to affordable housing for students (homesharers).
                     We see homeshare as a potential approach to address various
                     key societal concerns: loneliness and social isolation, supporting
                     ageing in place, and the affordable housing crisis.</p>
+                <h3>Why start Homesharing</h3>
+                <p></p>
             </div>
             <div class="principlesContainer">
-                    <div class="principlesHeading">Principles of the I-CHAt Homeshare Program</div>
-                    <div class="principleGroup">
-                        <object class="principlesSVG" data="src/images/reciprocity.svg" alt="Reciprocity" type="image/svg+xml"></object>
-                        <p>Reciprocity and Mutual Benefit</p>
-                    </div>
-                    <div class="principleGroup">
-                        <object class="principlesSVG" data="src/images/fairness.svg" alt="Fairness" type="image/svg+xml"></object>
-                        <p>Fairness to all parties</p>
-                    </div>
-                    <div class="principleGroup">
-                        <object class="principlesSVG" data="src/images/flexibility.svg" alt="Flexibility" type="image/svg+xml"></object>
-                        <p>Flexibility and Responsiveness</p>
-                    </div>
-                        <div class="principleGroup">
-                        <object class="principlesSVG" data="src/images/security.svg" alt="Security" type="image/svg+xml"></object>
+                <div class="principlesHeading">Principles of the I-CHAt Homeshare Program</div>
+                <div class="principleGroup">
+                    <object class="principlesSVG" data="src/images/reciprocity.svg" alt="Reciprocity" type="image/svg+xml"></object>
+                    <p>Reciprocity and Mutual Benefit</p>
+                </div>
+                <div class="principleGroup">
+                    <object class="principlesSVG" data="src/images/fairness.svg" alt="Fairness" type="image/svg+xml"></object>
+                    <p>Fairness to all parties</p>
+                </div>
+                <div class="principleGroup">
+                    <object class="principlesSVG" data="src/images/flexibility.svg" alt="Flexibility" type="image/svg+xml"></object>
+                    <p>Flexibility and Responsiveness</p>
+                </div>
+                <div class="principleGroup">
+                    <object class="principlesSVG" data="src/images/security.svg" alt="Security" type="image/svg+xml"></object>
                     <p>Safety and Security</p>
-                    </div>
                 </div>
-                <div class="videoContainer">
-                    <h3>What Does Homeshare Look-like?</h3>
-                    <iframe src="https://www.youtube.com/embed/1vVg6okzFRg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="bodyContainer">
-                <h3>What does it look like?</h3>
-                
             </div>
         </main>
+        <div id="feedbackFormContainer" class="hidden">
+            <form id="feedbackForm">
+                <span class="close-button" onclick="hideFeedbackForm()">&times;</span>
+                <h3>Website Feedback</h3>
+                <label for="feedbackName">Name:</label>
+                <input type="text" id="feedbackName" name="feedbackName">
+                
+                <label for="feedbackEmail">Email:</label>
+                <input type="email" id="feedbackEmail" name="feedbackEmail">
+                
+                <label for="feedbackMessage">Your Feedback:</label>
+                <textarea id="feedbackMessage" name="feedbackMessage" rows="4" required></textarea>
+                
+                <button class="navElement" type="submit">Submit Feedback</button>
+            </form>
+        </div>
         <footer>
-            
+            <div class="footerContainer">
+                <div class="footerColumnContainer">
+                    <div class="footerColumn">
+                        <h3>Privacy Policy</h3>
+                        <p>Your privacy is important to us. Read our privacy policy <a href>here</a>.</p>
+                        <p><i>© 2025 I-CHAt</i></p>
+                    </div>
+                    <div class="footerColumn">
+                        <h3>Contact Us</h3>
+                        <p>Email: info@I-CHAt.com.au</p>
+                    </div>
+                    <div class="footerColumn">
+                        <h3>Website Feedback</h3>
+                        <p>We would love to hear your feedback on our website.</p>
+                        <div class="navElement" onclick="showFeedbackForm()">Give Feedback</div>
+                    </div>
+                </div>
+            </div>
+            <div id="AOCBanner"></div>
+            <div id="AOC">
+                <h3>Acknowledgement of Country</h3>
+                <p>The ICHAt team and company acknowledges the Traditional Owners of Country throughout Australia and acknowledges their continuing connection to land, waters and community. 
+                    We pay our respects to the people, the cultures and the Elders past and present</p>
+            </div>
         </footer>
         <script src="scripts/index.js"></script>
+        <script src="scripts/main.js"></script>
     </body>
 </html>

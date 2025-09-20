@@ -105,7 +105,7 @@ main {
     margin: var(--margin-main-mobile);
 }
 
-main h1, main h2 {
+main h1 {
     text-align: center;
 }
 
@@ -143,10 +143,26 @@ footer {
 }
 #AOCBanner {
     width: 100%;
-    height: 5vh;
-    background-image: url("src/images/bodyBackground.jpg");
+    background-image: url("../src/images/AOCBanner2.jpg");
     background-size: cover;
     margin: var(--margin-main-mobile);
+    position: relative;
+}
+#AOCBanner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+.AOCContainer {
+    color: var(--color-text-light);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
 }
 .navElement {
     font-family: var(--font-family-nav);
@@ -334,7 +350,7 @@ footer {
     .footerContainer {
         margin: var(--margin-footer-tablet);
     }
-    #AOC {
+    .AOCContainer {
         margin: var(--margin-main-tablet);
     }
 
@@ -420,7 +436,7 @@ footer {
     .footerColumnContainer {
         flex-wrap: nowrap;
     }
-    #AOC {
+    .AOCContainer {
         margin: var(--margin-main-desktop);
     }
     .logoContainer {

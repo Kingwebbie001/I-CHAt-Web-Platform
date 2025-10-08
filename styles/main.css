@@ -16,7 +16,7 @@
     --container-spacing-mobile: 2rem 0 0 0;
     --container-spacing-tablet: 3rem 0 0 0;
     --container-spacing-desktop: 6rem 0 0 0;
-    --margin-main-desktop: 5rem 20rem 0 20rem;
+    --margin-main-desktop: 5rem 15rem 0 15rem;
     --margin-main-tablet: 3rem 6rem 0 6rem;
     --margin-main-mobile: 2rem 0 0 0;
     --margin-footer-mobile: 0 0 0 0;
@@ -170,6 +170,7 @@ footer {
     font-optical-sizing: auto;
     font-style: normal;
     font-variation-settings: "wdth" 150;
+    text-align: center;
     list-style-type: none;
     background-color: var(--color-dark);
     border-radius: var(--border-radius-nav);

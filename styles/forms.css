@@ -1,5 +1,6 @@
+
 .bodyContainer {
-    flex-direction: row;
+    flex-direction: column;
 }
 .bodyColumn {
     display: flex;
@@ -11,10 +12,41 @@
     background-size: cover;
     width: 100%;
     height: 20rem;
+    background-position: center;
+    box-shadow: var(--shadow-base);
+    border-radius: var(--border-radius-nav);
+}
+#homeOwnerFormButton, #homeSharerFormButton {
+    width: 1.8rem;
+    height: 1.8rem;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+.navElement {
+    margin: 2rem;
 }
 #backgroundHomesharer {
     background-image: url(../src/images/homeSharerBackground.jpg);
 }
 #backgroundHomeowner {
     background-image: url(../src/images/homeOwnerBackground.jpg);
+}
+
+@media (min-width: 768px) { 
+    #backgroundHomesharer, #backgroundHomeowner {
+        height: 25rem;
+    }
+}
+
+@media (min-width: 1024px) { 
+    .bodyContainer {
+        flex-direction: row;
+    }
+    #backgroundHomesharer, #backgroundHomeowner {
+        height: 28rem;
+    }
+    #homeOwnerFormButton, #homeSharerFormButton {
+    width: 2.8rem;
+    height: 2.8rem;
+    }
 }

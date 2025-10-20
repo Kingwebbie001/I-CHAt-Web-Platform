@@ -74,7 +74,25 @@ body::before {
     opacity: 0.5;
     filter: blur(2px);
 }
-
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+    all: initial;
+    font-family: var(--font-family-nav);
+    font-weight: var(--font-weight-bold);
+}
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 1.5rem;
+    padding: 0 0 4rem 0;
+}
+h3 {
+    font-size: 1rem;
+}
 body {
     margin: 0;
     font-size: var(--font-size-body-mobile);
@@ -105,10 +123,6 @@ main {
     margin: var(--margin-main-mobile);
 }
 
-main h1 {
-    text-align: center;
-}
-
 footer {
     display: flex;
     flex-direction: column;
@@ -118,7 +132,9 @@ footer {
     box-shadow: var(--shadow-top);
     margin: var(--container-spacing-mobile);
 }
-
+button {
+    all: unset;
+}
 .footerContainer {
     display: flex;
 }
@@ -420,7 +436,16 @@ footer {
     body {
         font-size: var(--font-size-body-desktop);
     }
-
+    h1 {
+        font-size: 5rem;
+    }
+    h2 {
+        font-size: 2rem;
+        padding: 0 0 4rem 0;
+    }
+    h3 {
+        font-size: 2rem;
+    }
     main {
         margin: var(--margin-main-desktop);
     }

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth <= 600) {
       acronymHeader.innerHTML = 'Intergenerational Community Homeshare Activity'; 
     } else {
-      acronymHeader.innerHTML = 'Intergenerational Community Homeshare Activity (I-CHAt)';
+      acronymHeader.innerHTML = 'The Intergenerational Community Homeshare Activity (I-CHAt)';
     }
   }
 

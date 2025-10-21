@@ -7,7 +7,7 @@
     flex-direction: column;
     flex-grow: 1;
     margin: 0 1rem 0 1rem;
-    width: 50%;
+    width: 100%;
 }
 #backgroundHomesharer, #backgroundHomeowner {
     background-size: cover;
@@ -42,6 +42,9 @@
 @media (min-width: 1024px) { 
     .bodyContainer {
         flex-direction: row;
+    }
+    .bodyColumn {
+        width: 50%;
     }
     #backgroundHomesharer, #backgroundHomeowner {
         height: 28rem;

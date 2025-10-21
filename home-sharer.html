@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.css">
+        <link rel="stylesheet" href="./styles/home-sharer.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <a href="index.html"></a><div class="logoContainer">
+                <object data="src/images/I-CHAtLogo.svg" alt="I-CHAtLogo" id="I-CHAt-Logo" type="image/svg+xml"></object>
+            </div></a>
+            <button class="hamburger-menu" id="hamburger-menu">☰</button>
+            <div class="directoryContainer" id="directory-container">
+                <ul>
+                    <li class="navElement"><a href="index.html">Home</a></li>
+                    <li class="navElement"><a href="affiliates.html">Affiliates</a></li>
+                    <li class="navElement"><a href="about.html">About</a></li>
+                    <li class="navElement"><a href="forms.html">Forms</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+             <div class="bodyContainer">
+                <h1>Student Home-sharer's Form</h1>
+                <p>
+                    Please fill out the form below to apply as a student home-sharer in the I-CHAt program. 
+                    Ensure all information is accurate and complete. This information is used to match you with a suitable homeowner.
+                </p>
+                
+                <form id="homeSharerForm" action="#" method="post" class="form-section-content">
+
+                    <!-- Section 1: Personal & Student Information -->
+                    <section>
+                        <h3>[1] Personal & Student Information</h3>
+
+                        <!-- Two-column layout for basic info -->
+                        <table>
+                            <!-- Row 1 -->
+                            <tr>
+                                <td>
+                                    <label for="fullName">Full Name:</label>
+                                    <input type="text" id="fullName" name="fullName" required>
+                                </td>
+                                <td>
+                                    <label for="studentId">Student ID/Number:</label>
+                                    <input type="text" id="studentId" name="studentId" required>
+                                </td>
+                            </tr>
+                            <!-- Row 2 -->
+                            <tr>
+                                <td>
+                                    <label for="email">Email Address:</label>
+                                    <input type="email" id="email" name="email" required>
+                                </td>
+                                <td>
+                                    <label for="phoneNumber">Mobile Phone Number:</label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                                </td>
+                            </tr>
+                            <!-- Row 3: Split Emergency Contact into two fields -->
+                            <tr>
+                                <td>
+                                    <label for="dateOfBirth">Date of Birth:</label>
+                                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                                </td>
+                                <td>
+                                    <label for="emergencyContactName">Emergency Contact Name:</label>
+                                    <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+                                </td>
+                            </tr>
+                            <!-- Row 4: Dedicated Emergency Contact Number field -->
+                            <tr>
+                                <td colspan="2">
+                                    <label for="emergencyContactNumber">Emergency Contact Number:</label>
+                                    <input type="tel" id="emergencyContactNumber" name="emergencyContactNumber" required>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- University Details (Full Width) -->
+                        <label for="university">University/College:</label>
+                        <input type="text" id="university" name="university" required>
+
+                        <label for="fieldOfStudy">Field of Study & Current Year:</label>
+                        <input type="text" id="fieldOfStudy" name="fieldOfStudy" placeholder="e.g., Bachelor of Nursing, 2nd Year" required>
+                    </section>
+                    
+                    <!-- Section 2: Homesharer Preferences & Requirements -->
+                    <section class="preferences-group">
+                        <h3>[2] Housing Preferences & Availability</h3>
+
+                        <!-- Desired Location & Start Date -->
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="desiredArea">Desired Area/Suburb:</label>
+                                    <input type="text" id="desiredArea" name="desiredArea" placeholder="e.g., Brisbane, Kenmore, 4069">
+                                </td>
+                                <td>
+                                    <label for="startDate">Target Start Date:</label>
+                                    <input type="date" id="startDate" name="startDate" required>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <!-- Radio Preferences: Smoker Status & Pet Comfort -->
+                        <div class="preference-flex-container">
+                            <fieldset>
+                                <legend>Smoker Status:</legend>
+                                <div class="radio-options">
+                                    <input type="radio" id="smokerNo" name="smokerStatus" value="No" required>
+                                    <label for="smokerNo">Non-smoker</label>
+                                    
+                                    <input type="radio" id="smokerYes" name="smokerStatus" value="Yes">
+                                    <label for="smokerYes">Smoker</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Comfort with Pets?</legend>
+                                <div class="radio-options">
+                                    <input type="radio" id="petsYes" name="petComfort" value="Yes" required>
+                                    <label for="petsYes">Yes</label>
+                                    
+                                    <input type="radio" id="petsNo" name="petComfort" value="No">
+                                    <label for="petsNo">No</label>
+                                    
+                                    <input type="radio" id="petsNegotiable" name="petComfort" value="Negotiable">
+                                    <label for="petsNegotiable">Negotiable</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        
+                        <!-- Availability -->
+                        <label for="availability">Availability (General Schedule/Commitments):</label>
+                        <textarea id="availability" name="availability" rows="4" placeholder="e.g., Available every evening and weekends; university classes 9am-3pm M-F." required></textarea>
+                        
+                    </section>
+
+                    <!-- Section 3: Background & Motivation -->
+                    <section>
+                        <h3>[3] Background & Motivation</h3>
+
+                        <label for="backgroundCheck">Do you agree to a standard background check/police clearance?</label>
+                        <div class="radio-options">
+                            <input type="radio" id="bgcYes" name="backgroundCheck" value="Yes" required>
+                            <label for="bgcYes">Yes</label>
+                            <input type="radio" id="bgcNo" name="backgroundCheck" value="No">
+                            <label for="bgcNo">No</label>
+                        </div>
+
+                        <label for="interests">Interests & Hobbies (used for matching with homeowners):</label>
+                        <textarea id="interests" name="interests" rows="3" placeholder="e.g., Gardening, reading, simple cooking, quiet film watching."></textarea>
+                        
+                        <label for="motivation">Why are you interested in the I-CHAt homeshare program?</label>
+                        <textarea id="motivation" name="motivation" rows="4" placeholder="Please describe your motivation and what you hope to contribute to the living arrangement." required></textarea>
+
+                        <label for="additionalInfo">Additional Information or Specific Needs:</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="e.g., Dietary restrictions, specific accessibility needs, preferred chores."></textarea>
+                    </section>
+
+                    <button class="navElement" type="submit">Submit Application</button>
+                </form>
+            </div>
+        </main>
+        <div id="feedbackFormContainer" class="hidden">
+            <form id="feedbackForm">
+                <span class="close-button" onclick="hideFeedbackForm()">&times;</span>
+                <h3>Website Feedback</h3>
+                <label for="feedbackName">Name:</label>
+                <input type="text" id="feedbackName" name="feedbackName">
+                
+                <label for="feedbackEmail">Email:</label>
+                <input type="email" id="feedbackEmail" name="feedbackEmail">
+                
+                <label for="feedbackMessage">Your Feedback:</label>
+                <textarea id="feedbackMessage" name="feedbackMessage" rows="4" required></textarea>
+                
+                <button class="navElement" type="submit">Submit Feedback</button>
+            </form>
+        </div>
+        <footer>
+            <div class="footerContainer">
+                <div class="footerColumnContainer">
+                    <div class="footerColumn">
+                        <h3>Privacy Policy</h3>
+                        <p>Your privacy is important to us. Read our privacy policy <a href>here</a>.</p>
+                        <p><i>© 2025 I-CHAt</i></p>
+                    </div>
+                    <div class="footerColumn">
+                        <h3>Contact Us</h3>
+                        <p>Email: info@I-CHAt.com.au</p>
+                    </div>
+                    <div class="footerColumn">
+                        <h3>Website Feedback</h3>
+                        <p>We would love to hear your feedback on our website.</p>
+                        <div class="navElement" onclick="showFeedbackForm()">Give Feedback</div>
+                    </div>
+                </div>
+            </div>
+            <div id="AOCBanner">
+                <div class="AOCContainer">
+                    <h3>Acknowledgement of Country</h3>
+                    <p>The ICHAt team and company acknowledges the Traditional Owners of Country throughout Australia and acknowledges their continuing connection to land, waters and community. 
+                        We pay our respects to the people, the cultures and the Elders past and present</p>
+                </div>
+            </div>
+        </footer>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

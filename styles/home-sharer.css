@@ -1,0 +1,132 @@
+/* --- Form Specific Styles --- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between sections */
+    padding-bottom: 2rem;
+}
+
+section {
+    padding: 1rem;
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--border-radius-container);
+    background-color: var(--color-background-dark);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* subtle shadow for lift */
+}
+
+section h3 {
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-section-content label {
+    display: block;
+    font-weight: var(--font-weight-semi-bold);
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-primary-dark);
+}
+
+.form-section-content input[type="text"],
+.form-section-content input[type="email"],
+.form-section-content input[type="number"],
+.form-section-content input[type="tel"],
+.form-section-content input[type="date"],
+.form-section-content textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--color-border-dark);
+    border-radius: 0.5rem;
+    box-sizing: border-box; 
+    font-size: var(--font-size-body-mobile);
+}
+
+.form-section-content textarea {
+    resize: vertical;
+}
+
+/* Styling the table structure for multi-column inputs (Personal Details) */
+.form-section-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0; /* Adjust table bottom margin */
+}
+
+.form-section-content table td {
+    padding: 0.5rem 0;
+    vertical-align: top;
+    width: 50%; 
+}
+
+/* Ensure full width for elements that span two columns */
+.form-section-content table td[colspan="2"] {
+    width: 100%;
+}
+
+/* --- Radio/Checkbox Group Styling (Preferences) --- */
+
+.preferences-group fieldset {
+    border: 1px solid var(--color-border-dark);
+    padding: 0.5rem 1rem 1rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+.preferences-group legend {
+    font-weight: var(--font-weight-semi-bold);
+    padding: 0 0.5rem;
+    color: var(--color-primary-dark);
+}
+
+.preference-flex-container {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 1rem;
+}
+.preference-flex-container fieldset {
+    margin-top: 0;
+    flex: 1;
+}
+
+.radio-options {
+    display: flex;
+    flex-wrap: wrap; /* Allows options to wrap if they are too long */
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-options label {
+    font-weight: var(--font-weight-light);
+    margin: 0;
+    display: inline;
+}
+
+.radio-options input[type="radio"] {
+    margin-right: 0.3rem;
+}
+
+
+/* --- Media Queries --- */
+
+/* Tablet/Small Desktop (768px and up) */
+@media (min-width: 768px) {
+    .form-section-content table td:first-child {
+        padding-right: 1.5rem;
+    }
+
+    .form-section-content input[type="text"],
+    .form-section-content input[type="email"],
+    .form-section-content input[type="number"],
+    .form-section-content input[type="tel"],
+    .form-section-content input[type="date"],
+    .form-section-content textarea {
+        font-size: var(--font-size-body-tablet);
+    }
+    
+    /* Preferences side-by-side */
+    .preference-flex-container {
+        flex-direction: row; 
+    }
+}

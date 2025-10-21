@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/main.css">
-        <link rel="stylesheet" href="./styles/index.css">
+        <link rel="stylesheet" href="./styles/home-owner.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -28,6 +28,207 @@
             </div>
         </header>
         <main>
+            <div class="bodyContainer">
+                <h1>Home Owner Application</h1>
+                <h2>This form is for interested home owners, who wish to establish a mutually beneficial shared living arrangement.</h2>
+                <p>Please fill in all sections to the best of your ability. Alteratively you can download and email a PDF copy of this form <strong onclick="generateAndOpenPDF()">here</strong></p>
+
+                <form action="mailto:enquiries@ICHAt.com.au" method="post" enctype="text/plain">
+                    
+                    <section>
+                        <h3>[1] Personal Information</h3>
+                        <p>Please fill out your basic contact and identity details.</p>
+                        <div class="form-section-content">
+                            <table>
+                                <tr>
+                                    <td colspan="2">
+                                        <label for="givenNames">Given Name/s:</label>
+                                        <input type="text" id="givenNames" name="givenNames" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="surname">Surname:</label>
+                                        <input type="text" id="surname" name="surname" required>
+                                    </td>
+                                    <td>
+                                        <label for="yearOfBirth">Year of Birth:</label>
+                                        <input type="number" id="yearOfBirth" name="yearOfBirth" min="1900" max="2025" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="mobile">Mobile:</label>
+                                        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" title="Ten digits data" required>
+                                    </td>
+                                    <td>
+                                        <label for="landline">Landline:</label>
+                                        <input type="tel" id="landline" name="landline" pattern="[0-9]{10}" title="Ten digits data">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <label for="emailAddress">Email Address:</label>
+                                        <input type="email" id="emailAddress" name="emailAddress" required>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </section>
+                    
+                    <section>
+                        <h3>[2] Home Details</h3>
+                        <p>Please provide your residential address, and when the property will be available. Specify details about your property including: its type, the number of private and available bedrooms, bathrooms, parking spaces and the parking space type.</p>
+
+                        <div class="form-section-content">
+                            <div class="address-details">
+                                <label for="city">City:</label>
+                                <input type="text" id="city" name="city" required>
+
+                                <label for="state">State:</label>
+                                <input type="text" id="state" name="state" required>
+
+                                <label for="postcode">Postcode:</label>
+                                <input type="text" id="postcode" name="postcode" required>
+                            </div>
+
+                            <div class="availability-details">
+                                <label for="availableDate">Available:</label>
+                                <input type="date" id="availableDate" name="availableDate" required>
+                            </div>
+
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="privateBedrooms">Private Bedrooms:</label>
+                                        <input type="number" id="privateBedrooms" name="privateBedrooms" min="1" required>
+                                    </td>
+                                    <td>
+                                        <label for="bathrooms">Bathrooms:</label>
+                                        <input type="number" id="bathrooms" name="bathrooms" min="1" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> <label for="parkingSpaces">Parking Spaces:</label>
+                                        <input type="number" id="parkingSpaces" name="parkingSpaces" min="0" required>
+
+                                        <fieldset class="parking-options-container">
+                                            <legend>Parking Type:</legend>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="garage" name="parkingType" value="Garage">
+                                                <label for="garage">Garage</label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="driveway" name="parkingType" value="Driveway">
+                                                <label for="driveway">Driveway</label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="carport" name="parkingType" value="Carport">
+                                                <label for="carport">Carport</label>
+                                            </div>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="onStreet" name="parkingType" value="On-street">
+                                                <label for="onStreet">On-street</label>
+                                            </div>
+                                        </fieldset>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="dwelling-details">
+                                <fieldset>
+                                    <legend>Dwelling Type:</legend>
+                                    <input type="radio" id="house" name="dwellingType" value="House" required>
+                                    <label for="house">House</label>
+                                    <input type="radio" id="apartment" name="dwellingType" value="Apartment">
+                                    <label for="apartment">Apartment</label>
+                                    <input type="radio" id="duplex" name="dwellingType" value="Duplex">
+                                    <label for="duplex">Duplex</label>
+                                    <input type="radio" id="townhouse" name="dwellingType" value="Townhouse">
+                                    <label for="townhouse">Townhouse</label>
+                                </fieldset>
+
+                                <fieldset>
+                                    <legend>Retirement Living?:</legend>
+                                    <input type="radio" id="retirementYes" name="retirementLiving" value="Yes" required>
+                                    <label for="retirementYes">Yes</label>
+                                    <input type="radio" id="retirementNo" name="retirementLiving" value="No">
+                                    <label for="retirementNo">No</label>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>[3] Amenities</h3>
+                        <p>Please select all available amenities at the property.</p>
+                        <div class="form-section-content amenities-grid">
+                            <fieldset>
+                                <legend class="visually-hidden">Available Amenities</legend>
+                                <input type="checkbox" id="kitchen" name="amenity" value="Kitchen">
+                                <label for="kitchen">Kitchen</label><br>
+                                <input type="checkbox" id="dishwasher" name="amenity" value="Dishwasher">
+                                <label for="dishwasher">Dishwasher</label><br>
+                                <input type="checkbox" id="washingMachine" name="amenity" value="Washing Machine">
+                                <label for="washingMachine">Washing Machine</label><br>
+                                <input type="checkbox" id="airConditioning" name="amenity" value="Air Conditioning">
+                                <label for="airConditioning">Air Conditioning</label><br>
+                                <input type="checkbox" id="heating" name="amenity" value="Heating">
+                                <label for="heating">Heating</label><br>
+                                <input type="checkbox" id="outdoorSpace" name="amenity" value="Outdoor Space">
+                                <label for="outdoorSpace">Outdoor Space</label><br>
+                                <input type="checkbox" id="wifi" name="amenity" value="Wi-Fi">
+                                <label for="wifi">Wi-Fi</label><br>
+                                <input type="checkbox" id="swimmingPool" name="amenity" value="Swimming Pool">
+                                <label for="swimmingPool">Swimming Pool</label><br>
+                                <input type="checkbox" id="publicTransport" name="amenity" value="Close Proximity to Public Transport">
+                                <label for="publicTransport">Close Proximity to Public Transport</label><br>
+                                <input type="checkbox" id="inHomeGym" name="amenity" value="In-home Gym">
+                                <label for="inHomeGym">In-home Gym</label><br>
+                                <input type="checkbox" id="privateStudy" name="amenity" value="Private Study Area">
+                                <label for="privateStudy">Private Study Area</label>
+                            </fieldset>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>[4] About</h3>
+                        <p>Tell us a bit about yourself and what you want to get out of the homeshare program.</p>
+                        <div class="form-section-content">
+                            <textarea id="about" name="about" rows="6" required></textarea>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>[5] Medical Conditions</h3>
+                        <p>Please list any medical conditions you have that may affect your ability to participate in the homeshare program, for example, mobility issues, hearing or vision impairments, chronic illnesses ect.</p>
+                        <div class="form-section-content">
+                            <textarea id="medicalConditions" name="medicalConditions" rows="4"></textarea>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>[6] Agreement Preferences</h3>
+                        <p>Please specify any relevent care needs and or living-arrangement conditions you might have, for example, transport needs, non-smoker requirements, cooking arrangments ect.</p>
+                        <div class="form-section-content">
+                            <textarea id="agreementPreferences" name="agreementPreferences" rows="4"></textarea>
+                        </div>
+                    </section>
+
+                    <div class="submit-container">
+                        <button class="navElement" type="submit">Submit Application</button>
+                    </div>
+
+                </form>
+                
+                <div class="additional-info">
+                    <p>If you have any questions or queries, please call us on (07) 9482 1185</p>
+                    <p>The information collected here is for the sole purpose of assessing your eligibility for our homeshare program and will be kept confidential. We will only use this information to match you with a suitable homeshare partner and will not share it with any third parties without your explicit consent.</p>
+                    <p>For more information, please refer to our <a href="underConstruction.html">Privacy Policy.</a></p>
+                </div>
+                <h2 id="HeaderPDF">Alternatively, you can download a PDF version of this form:</h2>
+                <div onclick="generateAndOpenPDF()" class="navElement">Download PDF Form</div>
+            </div>
         </main>
         <div id="feedbackFormContainer" class="hidden">
             <form id="feedbackForm">
@@ -72,7 +273,8 @@
                 </div>
             </div>
         </footer>
-        <script src="scripts/index.js"></script>
+        <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.js"></script>
+        <script src="scripts/home-owner.js"></script>
         <script src="scripts/main.js"></script>
     </body>
 </html>

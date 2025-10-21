@@ -1,0 +1,113 @@
+/* --- Form Specific Styles --- */
+strong {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+/* --- Form Specific Styles --- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between sections */
+    padding-bottom: 2rem;
+}
+
+section {
+    padding: 1rem;
+    border: 1px solid var(--color-border-dark);
+    border-radius: var(--border-radius-container);
+    background-color: var(--color-background-light);
+}
+
+section h3 {
+    margin-top: 0;
+}
+
+.form-section-content label {
+    display: block;
+    font-weight: var(--font-weight-semi-bold);
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.form-section-content input[type="text"],
+.form-section-content input[type="email"],
+.form-section-content input[type="number"],
+.form-section-content input[type="tel"],
+.form-section-content input[type="date"],
+.form-section-content textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid var(--color-border-dark);
+    border-radius: 0.5rem;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: var(--font-size-body-mobile);
+}
+
+.form-section-content textarea {
+    resize: vertical;
+}
+
+/* Styling the table structure for Personal and Home Details */
+.form-section-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.form-section-content table td {
+    padding: 0.5rem 0;
+    vertical-align: top;
+    width: 50%; /* Make two columns roughly equal */
+}
+
+/* Ensure full width for elements that span two columns */
+.form-section-content table td[colspan="2"] {
+    width: 100%;
+}
+
+/* --- Dwelling Type, Parking Type, and Amenities Fieldset Styling --- */
+
+/* Base Fieldset Styling (Applies to all radio/checkbox groups) */
+.dwelling-details fieldset,
+.parking-options-container,
+.amenities-grid fieldset { 
+    border: 1px solid var(--color-border-dark);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Common legend styling */
+.dwelling-details legend,
+.parking-options-container legend,
+.amenities-grid legend {
+    font-weight: var(--font-weight-semi-bold);
+    padding: 0 0.5rem;
+}
+
+/* Common style for the checkbox/radio groups */
+.parking-options-container .checkbox-group,
+.amenities-grid .checkbox-group {
+    /* Ensures the checkbox and label are treated as a single unit */
+    display: flex; 
+    align-items: center;
+    white-space: nowrap; /* Prevents wrapping within an option */
+}
+
+/* Remove default margin for labels inside checkbox/radio groups */
+.parking-options-container label,
+.amenities-grid label,
+.dwelling-details label {
+    font-weight: var(--font-weight-light);
+    margin: 0; 
+    display: inline;
+    margin-right: 1rem; /* Spacing between radio/checkbox groups in Dwelling Details */
+}
+
+.parking-options-container input[type="checkbox"],
+.amenities-grid input[type="checkbox"] {
+    margin-right: 0.5rem;
+    /* Reset margins that were affecting alignment */
+}

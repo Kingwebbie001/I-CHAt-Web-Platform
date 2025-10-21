@@ -2,6 +2,11 @@
 .bodyContainer {
     flex-direction: column;
 }
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .bodyColumn {
     display: flex;
     flex-direction: column;

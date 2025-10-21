@@ -11,12 +11,16 @@
     --color-background-light: white;
     --color-background-dark: #f8f8f8;
     --color-border-dark: #555555;
+    --color-critical: #A30000;
+    --color-positive: #1AFF1A;
+    --color-provider: #5D3A9B;
+    --color-homeowner: #DC3220;
 
     /* 📏 Spacing */
     --container-spacing-mobile: 2rem 0 0 0;
     --container-spacing-tablet: 3rem 0 0 0;
     --container-spacing-desktop: 6rem 0 0 0;
-    --margin-main-desktop: 5rem 15rem 0 15rem;
+    --margin-main-desktop: 5rem 12rem 0 12rem;
     --margin-main-tablet: 3rem 6rem 0 6rem;
     --margin-main-mobile: 2rem 0 0 0;
     --margin-footer-mobile: 0 0 0 0;
@@ -39,10 +43,13 @@
     --shadow-top: 0px -4px 6px rgba(0, 0, 0, 0.3);
 
     /* ✍️ Fonts */
-    --font-family-body: 'Roboto', sans-serif;
-    --font-family-nav: "Noto Sans", sans-serif;
+    --font-family-body: 'Roboto', sans-serif; /* Keep as is or change to Montserrat/Noto Sans */
+    --font-family-heading: 'Baskervville', serif; /* NEW: Use a classic serif for distinction */
+    --font-family-nav: "Noto Sans", sans-serif; /* Keep as is */
     --font-weight-light: 250;
-    --font-weight-bold: bold;
+    --font-weight-regular: 400;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
     --font-weight-nav: 500;
     --font-weight-principles: 600;
 
@@ -50,9 +57,22 @@
     --font-size-body-mobile: 14px;
     --font-size-body-tablet: 18px;
     --font-size-body-desktop: 20px;
+
     --font-size-nav-mobile: 0.8rem;
     --font-size-nav-tablet: 1rem;
     --font-size-nav-desktop: 1.8rem;
+
+    --font-size-h1-size-mobile: 2.5rem;
+    --font-size-h1-size-tablet: 3.5rem;
+    --font-size-h1-size-desktop: 5rem;
+
+    --font-size-h2-size-mobile: 1.5rem;
+    --font-size-h2-size-tablet: 1.8rem;
+    --font-size-h2-size-desktop: 2.2rem;
+
+    --font-size-h3-size-mobile: 1.25rem;
+    --font-size-h3-size-tablet: 1.35rem;
+    --font-size-h3-size-desktop: 1.5rem;
 
     /* 🖼️ Logo */
     --logo-width-mobile: 8rem;
@@ -75,23 +95,31 @@ body::before {
     filter: blur(2px);
 }
 h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-heading); 
     color: var(--color-dark);
-    all: initial;
-    font-family: var(--font-family-nav);
     font-weight: var(--font-weight-bold);
+    margin: 1.5rem 0 0.5rem 0; 
+    line-height: 1.2;
+    display: block;
 }
 h1 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: var(--font-size-h1-size-mobile);
+    margin: 0;
 }
+
 h2 {
-    font-size: 1.5rem;
-    padding: 0 0 4rem 0;
+    font-size: var(--font-size-h2-size-mobile);
+    padding: 0 0 1rem 0; 
+    text-align: center;
+    font-weight: var(--font-weight-regular);
+    color: var(--color-darker);
 }
+
 h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-h3-size-mobile);
+    font-weight: var(--font-weight-semi-bold);
+    margin: 2rem 0 0.8rem 0;
 }
 body {
     margin: 0;
@@ -101,7 +129,9 @@ body {
     font-weight: var(--font-weight-light);
     background-color: black;
 }
-
+main h3 {
+    border-bottom: 3px solid var(--color-primary);
+}
 header {
     display: flex;
     flex-direction: row;
@@ -171,14 +201,18 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
 .AOCContainer {
     color: var(--color-text-light);
-    font-weight: 500;
+    font-weight: var(--font-weight-semi-bold);
     position: relative;
     z-index: 1;
+}
+.AOCContainer h3 {
+    color: var(--color-text-light);
+    font-size: var(--font-size-h3-size-mobile);
 }
 .navElement {
     font-family: var(--font-family-nav);
@@ -304,7 +338,7 @@ button {
 
 #feedbackForm {
   background-color: white;
-  padding: 20px;
+  padding: 5rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 90%;
@@ -437,14 +471,18 @@ button {
         font-size: var(--font-size-body-desktop);
     }
     h1 {
-        font-size: 5rem;
+        font-size: var(--font-size-h1-size-desktop);
+        margin-bottom: 0;
     }
     h2 {
-        font-size: 2rem;
-        padding: 0 0 4rem 0;
+        font-size: var(--font-size-h2-size-desktop);
+        padding: 0 0 2.5rem 0;
+        font-weight: var(--font-weight-regular);
     }
     h3 {
-        font-size: 2rem;
+        font-size: var(--font-size-h3-size-desktop);
+        margin: 3rem 0 1rem 0; 
+        font-weight: var(--font-weight-bold);
     }
     main {
         margin: var(--margin-main-desktop);
@@ -464,6 +502,9 @@ button {
     }
     .AOCContainer {
         margin: var(--margin-main-desktop);
+    }
+    .AOCContainer h3 {
+        font-size: var(--font-size-h3-size-desktop);
     }
     .logoContainer {
         flex-grow: 0;

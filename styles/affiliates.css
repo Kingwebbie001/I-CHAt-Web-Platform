@@ -1,3 +1,67 @@
+strong {
+    font-weight: var(--font-weight-semi-bold);
+}
+
+/* New Styles replacing Inline CSS */
+.heading-critical {
+    color: var(--color-critical);
+    border-bottom-color: var(--color-critical);
+}
+
+.stat-card-critical {
+    background-color: var(--color-critical);
+}
+
+.paragraph-critical-border {
+    border-left: 5px solid var(--color-critical);
+    padding-left: 10px;
+    margin-top: 1rem;
+}
+
+.pitch-emphasis {
+    margin-top: 1.5rem; 
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.cta-wrapper {
+    text-align: center;
+}
+
+
+.pitch-section {
+    padding: 1.5rem 0;
+}
+.pitch-benefits {
+    background-color: var(--color-background-dark);
+    padding: 1rem;
+    border-radius: var(--border-radius-nav);
+    margin-top: 1rem;
+    box-shadow: var(--shadow-base);
+}
+
+.pitch-benefits ul {
+    list-style-type: none; 
+    padding-left: 0;
+}
+.pitch-benefits li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.pitch-benefits li::before {
+    content: '✓';
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+    position: absolute;
+    left: 0;
+}
+
+.pitch-stat-card {
+    box-shadow: var(--shadow-base);
+    border-radius: var(--border-radius-nav);
+    padding: 0.5rem;
+}
+
 .affiliatesContainer {
     display: flex;
     justify-content: center;

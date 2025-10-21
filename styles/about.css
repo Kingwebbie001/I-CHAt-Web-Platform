@@ -1,0 +1,326 @@
+/* Stat Cards Container (Mobile: Flex, Tablet+: Grid) */
+.stat-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.bodyContainer h2 {
+    color: var(--color-darker);
+    padding: 2rem 0 0.5rem 0;
+    font-weight: var(--font-weight-bold);
+}
+.bodyContainer h3 {
+    border: none;
+}
+.stat-card {
+    background-color: var(--color-background-dark);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--color-primary); /* Default accent color */
+    flex-grow: 1;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.stat-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.stat-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+    font-size: 1em;
+    margin: 0 0 0.5rem 0;
+}
+.stat-card .value {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-darker);
+    line-height: 1;
+}
+.stat-card .unit {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+.stat-card p {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Card Specific Colors */
+.stat-card.neutral-accent {
+    border-left-color: var(--color-secondary);
+}
+.stat-card.critical-accent {
+    border-left-color: var(--color-critical);
+}
+
+/* Detail Sections Container (Mobile: Flex, Tablet+: Grid) */
+.detail-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.detail-section {
+    background-color: var(--color-background-light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-container);
+    box-shadow: var(--shadow-base);
+    border: 1px solid var(--color-background-dark);
+}
+.detail-section h2 {
+    color: var(--color-darker);
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    font-weight: var(--font-weight-bold);
+}
+.detail-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* Styling for the list items */
+.detail-section ul li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem; /* Increased for small space between bullet and text */
+    line-height: 1.4;
+    color: var(--color-text-dark);
+    position: relative;
+}
+.detail-section ul li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+    line-height: 1.2;
+    font-family: Arial, sans-serif;
+}
+
+/* Themed list bullets (Fixed using Unicode escapes) */
+.care-list li::before {
+    content: "◆ ";; /* Solid Circle (Primary) - Changed from Diamond */
+    color: var(--color-critical); /* Changed from Critical color */
+}
+.student-list li::before {
+    content: "◆ ";; /* Solid Circle (Primary) */
+    color: var(--color-primary);
+}
+
+.detail-section strong {
+    color: var(--color-darker);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Summary Banner (Call to Action) */
+.summary-banner {
+    background-color: var(--color-dark);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-container);
+    margin-top: 2rem;
+    box-shadow: var(--shadow-bottom);
+    border: 2px solid var(--color-primary);
+}
+.summary-banner h3 {
+    color: var(--color-primary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
+.summary-banner p {
+    color: var(--color-text-light);
+    font-size: 1em;
+}
+
+/* --- Roles Definition Table --- */
+.roles-key {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: var(--border-radius-container);
+    box-shadow: var(--shadow-base);
+}
+
+.roles-key h2 {
+    color: var(--color-darker);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+}
+
+.roles-table {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.roles-table th, .roles-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--color-border);
+}
+.roles-table tr {
+    display: flex;
+}
+tbody td {
+    display: flex;
+    flex-grow: 1;
+    width: 33.3%;
+}
+.roles-table th {
+    font-weight: bold;
+    font-size: 1.1em;
+    flex-grow: 1;
+    width: 33.3%;
+}
+    
+/* Apply custom colors to roles */
+.role-provider { background-color: var(--color-provider); color: white; }
+.role-homeowner { background-color: var(--color-homeowner); color: white; }
+.role-homesharer { background-color: var(--color-positive); color: white; }
+
+
+/* --- Main Stage Sections --- */
+.stage {
+    margin-bottom: 40px;
+    padding-left: 20px;
+    box-shadow: var(--shadow-base);
+    border-radius: var(--border-radius-container);
+}
+
+.stage-title {
+    color: var(--color-secondary);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.stage-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Individual Content Cards */
+.content-card {
+    background-color: #F8F9FA; 
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.card-title {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 2px dashed var(--color-border);
+    padding-bottom: 5px;
+}
+
+.card-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.card-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.card-list li::before {
+    content: "◆ ";
+    color: var(--color-secondary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+
+/* Role Indicators */
+.roles {
+    font-style: italic;
+    color: var(--color-dark);
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9em;
+}
+    
+    /* Highlight variables */
+    .role-highlight-provider { color: var(--color-provider); font-weight: bold; }
+    .role-highlight-homeowner { color: var(--color-homeowner); font-weight: bold; }
+    .role-highlight-homesharer { color: var(--color-positive); font-weight: bold; }
+    .role-highlight-home { color: #6C757D; font-weight: bold; }
+
+
+    /* Specific styles for the Formalising card */
+    .formalising .card-list li::before {
+         content: "✓"; 
+         color: var(--color-positive); /* Using Homeowner red for mandatory items */
+    }
+
+.bodyNavContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: var(--container-spacing-mobile);
+    flex-wrap: wrap;
+}
+
+.bodyNavColumn {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bodyNavContainer ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-size-nav-mobile);
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.bodyNavContainer li {
+    font-size: var(--font-size-nav-mobile);
+}
+/* --- Media Queries --- */
+
+/* Overrides for Tablet/Desktop (768px+) */
+@media (min-width: 768px) {
+    /* Layouts switch to grid for larger screens */
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .detail-layout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    .bodyNavContainer li {
+        font-size: var(--font-size-nav-tablet);
+    }
+}
+
+@media (min-width: 1024px) {
+    .bodyNavContainer li {
+        font-size: var(--font-size-nav-desktop);
+    }
+
+}

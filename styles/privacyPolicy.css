@@ -1,0 +1,35 @@
+.bodyContainer p {
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+    color: var(--color-text-dark);
+    max-width: 900px;
+}
+.bodyContainer ul {
+    margin: 0.5rem 0 1.5rem 1.5rem;
+    padding: 0;
+}
+
+.bodyContainer li {
+    list-style-type: disc;
+    margin-bottom: 0.8rem;
+    padding-left: 0.5rem;
+    line-height: 1.5;
+    color: var(--color-text-dark);
+}
+
+.bodyContainer li strong {
+    color: var(--color-darker);
+}
+
+.bodyContainer h3 {
+    margin-top: 2.5rem;
+}
+
+.bodyContainer a {
+    color: var(--color-provider);
+    text-decoration: underline;
+}
+
+.bodyContainer a:hover {
+    color: var(--color-primary);
+}

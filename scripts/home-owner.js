@@ -171,12 +171,6 @@ async function generateAndOpenPDF() {
             fields: Array.from({ length: 12 }, (_, i) => ({ name: 'a'+`${i + 10}`, columnLength: 2 }))
         },
         {
-            title: 'Medical Conditions',
-            description: 'Please list any medical conditions you have that may affect your ability to participate in the homeshare program, for example, mobility issues, hearing or vision impairments, chronic illnesses ect.',
-            type: 'form',
-            fields: Array.from({ length: 6 }, (_, i) => ({ name: 'm'+`${i + 10}`, columnLength: 2 }))
-        },
-        {
             title: 'Agreement Preferences',
             description: 'Please specify any relevent care needs and or living-arrangement conditions you might have, for example, transport needs, non-smoker requirements, cooking arrangments ect.',
             type: 'form',
